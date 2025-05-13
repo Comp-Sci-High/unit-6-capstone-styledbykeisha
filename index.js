@@ -1,12 +1,9 @@
 const mongoose = require("mongoose");
-const app = require("express");
-
-app.use(express.static(__dirname +"/public"));
-
+const express = require("express");
+const app = express();
+app.use(express.static(__dirname + "/public"));
 app.use(express.json());
-
-app.set("view engine","ejs");
-
+app.set("view engine", "ejs");
 app.use((req,res,next)=> {
     console.log(`${req.method}: ${req.path}`);
     next();
@@ -17,7 +14,7 @@ const stylesSchema = new mongoose.Schema(
         name:{type:String,required:true},
         image:{type:String,required:true},
         cost:{type:Number,required:true},
-        timeLength:{type:Number,require:true},
+        timeLength:{type:Number,required:true},
     }
 );
 const Style = mongoose.model("Style", stylesSchema, "Styles");
@@ -37,8 +34,8 @@ res.json(response)
 
 app.post("/style/save", async (req, res) => {
 const styles = await new Style ({
-name: req.body.username,
-image:req.body.username,
+name: req.body.name,
+image:req.body.image,
 cost:req.body.cost,
 timeLength:req.body.timeLength
 }).save()
@@ -66,7 +63,7 @@ const response = await Appointments.findOneAndDelete({_id:req.params._id})
 res.json(response)
 })
 app.patch("patch/styles/:_id/", async (req,res)=>{
-const response = await Appointments.findOneAndUpdate({id:req.params._id},{time:time.body.time})
+const response = await Appointments.findOneAndUpdate({id:req.params._id},req.body)
 res.json(response)
 })
 
@@ -83,7 +80,7 @@ res.json(appointments);
 
 
 async function startServer(){
-    await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.15rhq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.u9yhg.mongodb.net/CSHteachers?retryWrites=true&w=majority&appName=Cluster0");
     app.listen(3000,() =>{
         console.log(`Server running.`);
     });
