@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Grades</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <h1>Styled By Keisha</h1>
+
+  <div class="card-container">
+    <% for(let i = 0; i < styles.length; i++){ %>
+      <div class="card">
+        <img src="<%= styles[i].image %>" alt="Profile Picture">
+        <h2><%= styles[i].name %></h2>
+        <p>Cost: <%= styles[i].cost %></p>
+
+        <div class="button-wrapper">
+            <!-- Task 5: Add a form to update the student's grade -->
+            
+
+            <!-- Task 2: Add a button to delete the entire student by ID -->
+              <button onclick="deleteStyle('<%= styles[i]._id %>')">Delete</button>
+           
+            <!-- Go to script.js to complete Task 3 -->
+
+        </div>
+
+      </div>
+    <% } %>
+  </div>
+
+</body>
+</html>

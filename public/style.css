@@ -1,0 +1,153 @@
+/* Styles Page Specific Styles */
+body {
+    background-color: #ffebf3; /* Light pink background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Shared Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #a52a55; /* Dark pink navbar */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: #e6d8a7; /* Pale gold */
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #e6d8a7; /* Pale gold */
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* Styles Page Content */
+.styles-container {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 120px); /* Full height minus navbar */
+}
+
+.styles-container h1 {
+    color: #a52a55; /* Dark pink */
+    margin-bottom: 30px;
+}
+
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.style-card {
+    height: 250px;
+    border: 3px solid #a52a55; /* Dark pink border */
+    border-radius: 10px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.style-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.style-card.active {
+    transform: translate(-50%, -50%) scale(1.5);
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+}
+
+.style-title {
+    font-size: 22px;
+    color: #a52a55; /* Dark pink */
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+}
+
+.booking-btn {
+    position: absolute;
+    bottom: 60px;
+    padding: 10px 20px;
+    background-color: #a52a55; /* Dark pink */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 3;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.style-card.active .booking-btn {
+    display: block;
+}
+
+.booking-btn:hover {
+    background-color: #8a1e45; /* Slightly darker pink */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .styles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .styles-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+}

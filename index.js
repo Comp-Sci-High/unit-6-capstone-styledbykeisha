@@ -19,9 +19,10 @@ const stylesSchema = new mongoose.Schema(
 );
 const Style = mongoose.model("Style", stylesSchema, "Styles");
 
+
 app.get("/", async (req,res)=>{
     const styles = await Style.find({});
-    res.json(styles)
+        res.render("styles.ejs", { styles });
 })
 app.delete("/delete/style/:_id",async(req,res)=>{
 const response = await Style.findOneAndDelete({_id:req.params._id})
