@@ -10,6 +10,7 @@
   <h1>Styled By Keisha</h1>
 
   <div class="card-container">
+    
     <% for(let i = 0; i < styles.length; i++){ %>
       <div class="card">
         <img src="<%= styles[i].image %>" alt="Profile Picture">
@@ -18,7 +19,11 @@
 
         <div class="button-wrapper">
             <!-- Task 5: Add a form to update the student's grade -->
-            
+             <form onsubmit="updateStyles(event, '<%= styles[i]._id %>')">
+                <label>New Cost:</label>
+                <input type="number" name="cost" value="<%= styles[i].cost %>" required />
+                <button type="submit">Update</button>
+              </form>
 
             <!-- Task 2: Add a button to delete the entire student by ID -->
               <button onclick="deleteStyle('<%= styles[i]._id %>')">Delete</button>

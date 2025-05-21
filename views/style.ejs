@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled By Keisha - Styles</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="home.html" class="logo">Styled By Keisha</a>
+        <div class="nav-links">
+            <a href="/home.html">Home</a>
+            <a href="/styles.html">Styles</a>
+        </div>
+    </nav>
+    
+    <!-- Styles Page Content -->
+    <div class="styles-container">
+        <h1>Hair Styles Gallery</h1>
+        <div class="styles-grid">
+            
+    <% for(let i = 0; i < styles.length; i++){ %>
+            <div class="style-card">
+                <h3 class="style-title"><%= styles[i].name %></h3>
+                <button class="booking-btn">Book Now</button>
+            </div>
+    
+ <% } %>
+        </div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

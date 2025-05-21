@@ -32,3 +32,23 @@ function toggleStyleCard(card) {
         card.classList.add('active');
     }
 }
+
+async function updateStyles(e, id) {
+    e.preventDefault();
+   
+    const formData = new FormData(e.target);
+    const formObject = Object.fromEntries(formData.entries());
+   
+    await fetch('/update/' + id, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formObject)
+      });
+     
+      window.location.href = '/'
+     }
+
+       async function deleteStyles(id) {
+        await fetch('/delete/' + id, {method: 'DELETE'});
+        window.location.href = "/"
+       }

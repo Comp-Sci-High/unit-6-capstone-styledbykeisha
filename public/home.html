@@ -3,30 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled By Keisha - Home</title>
-    <link rel="stylesheet" href="/home.css">
+    <title>Styled By Keisha - Styles</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Inline CSS for critical styles */
+        body {
+            background-color: #ffebf3;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <a href="home.html" class="logo">Styled By Keisha</a>
         <div class="nav-links">
-            <a href="/home.html">Home</a>
-            <a href="/styles.html">Styles</a>
+            <a href="home.html">Home</a>
+            <a href="styles.html" class="active">Styles</a>
         </div>
     </nav>
     
-    <!-- Home Page Content -->
-    <div class="home-container">
-        <div class="card">
-            <img src="images/profile1.jpg" alt="Keisha's Work" class="profile-pic">
-            <h2 class="card-title">Our Services</h2>
+    <!-- Styles Page Content -->
+    <main class="styles-container">
+        <h1>Our Signature Styles</h1>
+        <div class="styles-grid">
+            <!-- Box Braids Card -->
+            <article class="style-card">
+                <div class="card-image-container">
+                    <img src="images/box-braids.jpg" alt="Box Braids" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h2 class="style-title">Box Braids</h2>
+                    <div class="style-details">
+                        <span class="price">$150-$250</span>
+                        <span class="duration">4-6 hours</span>
+                    </div>
+                    <p class="style-description">Classic individual braids with natural hair or extensions. Lasts 6-8 weeks.</p>
+                    <button class="book-btn">Book This Style</button>
+                </div>
+            </article>
+
+            <!-- Senegalese Twists Card -->
+            <article class="style-card">
+                <div class="card-image-container">
+                    <img src="images/senegalese-twists.jpg" alt="Senegalese Twists" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h2 class="style-title">Senegalese Twists</h2>
+                    <div class="style-details">
+                        <span class="price">$180-$300</span>
+                        <span class="duration">5-7 hours</span>
+                    </div>
+                    <p class="style-description">Elegant rope-like twists that are lightweight and versatile.</p>
+                    <button class="book-btn">Book This Style</button>
+                </div>
+            </article>
+
+            <!-- Add more cards following the same structure -->
         </div>
-        <div class="card">
-            <img src="images/profile2.jpg" alt="Keisha's Specials" class="profile-pic">
-            <h2 class="card-title">Special Offers</h2>
-        </div>
-    </div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
