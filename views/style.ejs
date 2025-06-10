@@ -8,13 +8,13 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <nav>
-        <a href="home.html" class="logo">Styled By Keisha</a>
-        <div class="nav-links">
-            <a href="/home.html">Home</a>
-            <a href="/styles.html">Styles</a>
-        </div>
-    </nav>
+  <nav>
+    <a href="/" class="logo">Styled By Keisha</a>
+    <div class="nav-links">
+      <a href="/" >Home</a>
+      <a href="/style" class="active">Styles</a>
+    </div>
+  </nav>
     
     <!-- Styles Page Content -->
     <div class="styles-container">
@@ -22,10 +22,16 @@
         <div class="styles-grid">
             
     <% for(let i = 0; i < styles.length; i++){ %>
-            <div class="style-card">
-                <h3 class="style-title"><%= styles[i].name %></h3>
-                <button class="booking-btn">Book Now</button>
-            </div>
+            <div class="info-card">
+    <img class="card-image" src="<%= styles[i].image %>">
+
+    <h3 class="style-title"><%= styles[i].name %></h3>
+    <h3 class="style-title">$<%= styles[i].cost %></h3>
+    <h3 class="style-title"><%= styles[i].timeLength %> hours</h3>
+
+    <button class="booking-btn">Book Now</button>
+</div>
+
     
  <% } %>
         </div>

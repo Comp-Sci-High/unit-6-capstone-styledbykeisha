@@ -1,192 +1,127 @@
-/* ===== Global Styles ===== */
+/* Reset & Base Styles */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebf3; /* Light pink */
     color: #333;
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
-/* ===== Navigation ===== */
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 15px 30px;
     background-color: #a52a55;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .logo {
     color: #e6d8a7;
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: bold;
     text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 20px;
 }
 
 .nav-links a {
     color: #e6d8a7;
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
     color: white;
-    text-decoration: underline;
 }
 
-/* ===== Main Content ===== */
-.styles-container {
-    padding: 3rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.styles-container h1 {
-    color: #a52a55;
-    text-align: center;
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-}
-
-.styles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2.5rem;
-    padding: 1rem;
-}
-
-/* ===== Style Cards ===== */
-.style-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.style-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.card-image-container {
-    height: 250px;
-    overflow: hidden;
-}
-
-.card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.style-card:hover .card-image {
-    transform: scale(1.05);
-}
-
-.card-content {
-    padding: 1.5rem;
+/* Card Container */
+.card-column {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-}
-
-.style-title {
-    color: #a52a55;
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    text-align: center;
-}
-
-.style-details {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 0.5rem 0;
+    gap: 20px;
+    padding: 30px 15px;
+}
+.info-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    max-width: 280px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
 }
 
-.price {
-    font-weight: 700;
+.info-card:hover {
+    transform: scale(1.03);
+}
+
+/* Top Image */
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #e6d8a7;
+}
+
+/* Title + Price + Time */
+.style-title {
+    margin: 10px 0 0;
+    font-size: 16px;
     color: #a52a55;
-    font-size: 1.2rem;
 }
 
-.duration {
-    color: #666;
-    font-size: 1rem;
-}
-
-.style-description {
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0.5rem 0;
-}
-
-.book-btn {
+/* Booking Button */
+.booking-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
     background-color: #a52a55;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
     border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 1rem;
-    align-self: center;
-    width: 100%;
-    max-width: 200px;
+    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
-.book-btn:hover {
+.booking-btn:hover {
     background-color: #8a1e45;
 }
 
-/* ===== Responsive Design ===== */
-@media (max-width: 768px) {
-    nav {
-        padding: 1rem 1.5rem;
+
+/* Responsive */
+@media (max-width: 600px) {
+    .info-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 12px;
     }
-    
-    .logo {
-        font-size: 1.5rem;
+
+    .card-image {
+        margin-bottom: 10px;
     }
-    
-    .nav-links {
-        gap: 1rem;
-    }
-    
-    .styles-container {
-        padding: 2rem 1rem;
-    }
-    
-    .styles-container h1 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .styles-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .card-image-container {
-        height: 220px;
+
+    .card-text {
+        text-align: left;
     }
 }

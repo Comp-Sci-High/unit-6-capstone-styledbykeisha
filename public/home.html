@@ -1,69 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled By Keisha - Styles</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Inline CSS for critical styles */
-        body {
-            background-color: #ffebf3;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Styled By Keisha</title>
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="home.html" class="logo">Styled By Keisha</a>
-        <div class="nav-links">
-            <a href="home.html">Home</a>
-            <a href="styles.html" class="active">Styles</a>
-        </div>
-    </nav>
-    
-    <!-- Styles Page Content -->
-    <main class="styles-container">
-        <h1>Our Signature Styles</h1>
-        <div class="styles-grid">
-            <!-- Box Braids Card -->
-            <article class="style-card">
-                <div class="card-image-container">
-                    <img src="images/box-braids.jpg" alt="Box Braids" class="card-image">
-                </div>
-                <div class="card-content">
-                    <h2 class="style-title">Box Braids</h2>
-                    <div class="style-details">
-                        <span class="price">$150-$250</span>
-                        <span class="duration">4-6 hours</span>
-                    </div>
-                    <p class="style-description">Classic individual braids with natural hair or extensions. Lasts 6-8 weeks.</p>
-                    <button class="book-btn">Book This Style</button>
-                </div>
-            </article>
 
-            <!-- Senegalese Twists Card -->
-            <article class="style-card">
-                <div class="card-image-container">
-                    <img src="images/senegalese-twists.jpg" alt="Senegalese Twists" class="card-image">
-                </div>
-                <div class="card-content">
-                    <h2 class="style-title">Senegalese Twists</h2>
-                    <div class="style-details">
-                        <span class="price">$180-$300</span>
-                        <span class="duration">5-7 hours</span>
-                    </div>
-                    <p class="style-description">Elegant rope-like twists that are lightweight and versatile.</p>
-                    <button class="book-btn">Book This Style</button>
-                </div>
-            </article>
+  <!-- Navbar -->
+  <nav>
+    <a href="/" class="logo">Styled By Keisha</a>
+    <div class="nav-links">
+      <a href="/" class="active">Home</a>
+      <a href="/style">Styles</a>
+    </div>
+  </nav>
 
-            <!-- Add more cards following the same structure -->
-        </div>
-    </main>
+  <!-- Main Content -->
+  <div class="card-column">
+    <!-- About Card -->
+    <div class="info-card">
+      <h2>About Keisha</h2>
+      <p>
+        Keisha is a talented and experienced hairstylist who specializes in women’s hair care and styling. Her goal is to help every client leave feeling empowered, refreshed, and beautiful with every visit.
+      </p>
+    </div>
 
-    <script src="js/script.js"></script>
+    <!-- Policies Card -->
+    <div class="info-card">
+      <h2>Salon Policies</h2>
+      <ul>
+        <li>Please arrive on time for your appointment.</li>
+        <li>24-hour notice required for cancellations or rescheduling.</li>
+        <li>No additional guests allowed unless discussed prior.</li>
+        <li>All bookings require a non-refundable deposit.</li>
+      </ul>
+    </div>
+  </div>
+
 </body>
 </html>

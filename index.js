@@ -19,9 +19,11 @@ const stylesSchema = new mongoose.Schema(
 )
 
 const Style = mongoose.model("Style", stylesSchema, "Styles");
+app.get("/", (req, res) => {
+		res.sendFile(__dirname + "/public/home.html")
+	})
 
-
-app.get("/", async (req, res) => {
+app.get("/style", async (req, res) => {
     const styles = await Style.find({});
     res.render("style.ejs", { styles });
 })
@@ -84,7 +86,7 @@ app.post("/appointments/save", async (req, res) => {
 
 
 async function startServer() {
-    await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.u9yhg.mongodb.net/CSHteachers?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb+srv://SE12:CSH2025@cluster0.l5rhq.mongodb.net/Keisha?retryWrites=true&w=majority&appName=Cluster0");
     app.listen(3000, () => {
         console.log(`Server running.`);
     });
